@@ -1,0 +1,13 @@
+.avatar{
+    height: 55px;
+    margin-bottom: 10px;
+}
+
+.card-header .avatar, 
+.card-body .avatar, 
+.navbar .avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 900px;
+    overflow: hidden;
+}
