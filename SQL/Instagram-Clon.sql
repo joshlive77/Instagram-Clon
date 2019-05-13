@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema laravel_master
+-- Schema instagram-clon
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema laravel_master
+-- Schema instagram-clon
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `laravel_master` DEFAULT CHARACTER SET utf8 ;
-USE `laravel_master` ;
+CREATE SCHEMA IF NOT EXISTS `instagram-clon` DEFAULT CHARACTER SET utf8 ;
+USE `instagram-clon` ;
 
 -- -----------------------------------------------------
--- Table `laravel_master`.`USERS`
+-- Table `instagram-clon`.`USERS`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laravel_master`.`USERS` (
+CREATE TABLE IF NOT EXISTS `instagram-clon`.`USERS` (
   `id` INT(255) NOT NULL AUTO_INCREMENT,
   `role` VARCHAR(20) NULL,
   `name` VARCHAR(100) NULL,
@@ -37,9 +37,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `laravel_master`.`IMAGES`
+-- Table `instagram-clon`.`IMAGES`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laravel_master`.`IMAGES` (
+CREATE TABLE IF NOT EXISTS `instagram-clon`.`IMAGES` (
   `id` INT(255) NOT NULL AUTO_INCREMENT,
   `user_id` INT(255) NULL,
   `image_path` VARCHAR(255) NULL,
@@ -49,16 +49,16 @@ CREATE TABLE IF NOT EXISTS `laravel_master`.`IMAGES` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_images_users`
     FOREIGN KEY (`user_id`)
-    REFERENCES `laravel_master`.`USERS` (`id`)
+    REFERENCES `instagram-clon`.`USERS` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `laravel_master`.`COMMENTS`
+-- Table `instagram-clon`.`COMMENTS`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laravel_master`.`COMMENTS` (
+CREATE TABLE IF NOT EXISTS `instagram-clon`.`COMMENTS` (
   `id` INT(255) NOT NULL AUTO_INCREMENT,
   `user_id` INT(255) NULL,
   `image_id` INT(255) NULL,
@@ -68,21 +68,21 @@ CREATE TABLE IF NOT EXISTS `laravel_master`.`COMMENTS` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_comments_users`
     FOREIGN KEY (`user_id`)
-    REFERENCES `laravel_master`.`USERS` (`id`)
+    REFERENCES `instagram-clon`.`USERS` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_comments_images`
     FOREIGN KEY (`image_id`)
-    REFERENCES `laravel_master`.`IMAGES` (`id`)
+    REFERENCES `instagram-clon`.`IMAGES` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `laravel_master`.`LIKES`
+-- Table `instagram-clon`.`LIKES`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laravel_master`.`LIKES` (
+CREATE TABLE IF NOT EXISTS `instagram-clon`.`LIKES` (
   `id` INT(255) NOT NULL AUTO_INCREMENT,
   `user_id` INT(255) NULL,
   `image_id` INT(255) NULL,
@@ -91,12 +91,12 @@ CREATE TABLE IF NOT EXISTS `laravel_master`.`LIKES` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_likes_users`
     FOREIGN KEY (`user_id`)
-    REFERENCES `laravel_master`.`USERS` (`id`)
+    REFERENCES `instagram-clon`.`USERS` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_likes_images`
     FOREIGN KEY (`image_id`)
-    REFERENCES `laravel_master`.`IMAGES` (`id`)
+    REFERENCES `instagram-clon`.`IMAGES` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

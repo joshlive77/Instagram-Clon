@@ -69,3 +69,35 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+## Instalacion
+
+
+Instalacion de laravel para correr pruebas
+
+#instalacion
+
+generar la ruta en el archivo httpd-vhosts
+
+C:\wamp64\bin\apache\apache2.4.37\conf\extra
+
+y añadimos el fichero del host con la ruta 127.0.0.1 aprendiendo-laravel.com.devel
+
+C:\Windows\System32\drivers\etc
+
+luego de clonar el repositorio ejecutar:
+
+composer install
+
+y recrear el archivo .env tomando el exmple.env
+
+finalmente ejecutar 
+
+php artisan key:generate
+
+para generar clave unica de laravel
+
+
+quiero borrar esta linea
