@@ -27,7 +27,7 @@ HORA=`date +"%H:%M"`;
 git status;
 git add .
 git commit -m "editado por: josh zulett el: $DIA a horas: $HORA";
-git push origin master;
+git push origin instagram-clon;
 git status;
 
 echo *********BESITO, BESITO CHAU CHAU*********
