@@ -9,7 +9,7 @@
                     Editar imagen
                 </div>
                 <div class="card-body">
-                    <img src="{{ route('image.file', ['filename' => $image->image_path]) }}" class="img-fluid card-img-top rounded img-thumbnail" alt="Responsive image">
+                    <img src="{{ route('image.file', ['filename' => $image->image_path]) }}" class="img-fluid card-img-top rounded img-thumbnail mb-3" alt="Responsive image">
                     <form method="post" enctype="multipart/form-data" action="{{ route('image.update') }}">
                         @csrf
 

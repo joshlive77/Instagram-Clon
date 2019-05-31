@@ -9,10 +9,11 @@
                     Subir nueva imagen
                 </div>
                 <div class="card-body">
+                    <img src="" class="img-fluid card-img-top rounded img-thumbnail mb-3" alt="Responsive image" style="display:none"> 
                     <form method="post" enctype="multipart/form-data" action="{{ route('image.save') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group pt-4 row">
                             <label for="image_path" class="col-md-3 col-form-label text-md-right">Imagen</label>
                             <div class="col-md-7">
                                 <div class="custom-file">
